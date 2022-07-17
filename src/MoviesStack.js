@@ -19,7 +19,6 @@ export default function MoviesStack() {
 }
 
 const AllMovies = props => {
-  console.log(props);
   return (
     <View className="flex-1 items-center justify-center bg-white">
       <Text className="text-red-900">All Movies</Text>

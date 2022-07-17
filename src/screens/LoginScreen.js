@@ -9,15 +9,12 @@ import {
 } from 'react-native';
 import Button from '../components/Button';
 import loginImg from '../assets/login.jpg';
+import {AuthContext} from '../context/AuthContext';
 
 export default function LoginScreen() {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
-
-  const submitForm = () => {
-    console.log(email);
-    console.log(password);
-  };
+  const {login} = React.useContext(AuthContext);
 
   return (
     <SafeAreaView class="flex-1">
@@ -34,19 +31,18 @@ export default function LoginScreen() {
         <View className="flex-1">
           <TextInput
             placeholder={'Email'}
-            keyboardType={'email-address'}
+            autoCapitalize="none"
             onChangeText={text => setEmail(text)}
             className="my-3 p-3 border border-black rounded-lg"
           />
           <TextInput
             placeholder={'Password'}
-            keyboardType={'default'}
             secureTextEntry={true}
             onChangeText={text => setPassword(text)}
             className="my-3 p-3 border border-black rounded-lg"
           />
           <View className="flex-1 items-center py-3">
-            <Button text="Login" press={() => submitForm()} />
+            <Button text="Login" press={() => login(email, password)} />
           </View>
         </View>
       </ScrollView>
