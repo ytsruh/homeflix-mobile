@@ -1,5 +1,5 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, {createContext, useState, useEffect} from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {BASE_URL} from '../config';
 
 export const AuthContext = createContext();

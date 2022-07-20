@@ -30,10 +30,12 @@ function ShowsScreen() {
 
 function AccountScreen() {
   const {userInfo, logout} = useContext(AuthContext);
+  //const name = userInfo.userData.name;
+  console.log(userInfo);
   return (
     <View className="flex-1 items-center justify-center bg-white">
       <Text>Account</Text>
-      <Text>{JSON.parse(userInfo).userData.name}</Text>
+      <Text>{userInfo.userData.name}</Text>
       <Button press={logout} text="Logout" />
     </View>
   );
