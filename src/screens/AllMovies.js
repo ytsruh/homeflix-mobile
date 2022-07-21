@@ -60,7 +60,6 @@ export default function AllMovies(props) {
       {data.length > 0 ? (
         <KeyboardAvoidingView behavior={'position'} style={{flex: 1}}>
           <FlatList
-            nestedScrollEnabled
             data={filterMovies(data)}
             renderItem={item => (
               <MovieItem navigation={props.navigation} data={item} />
@@ -68,6 +67,7 @@ export default function AllMovies(props) {
             keyExtractor={movie => movie._id}
             ListHeaderComponent={<Header setFilter={setFilter} />}
             numColumns={2}
+            initialNumToRender={10}
           />
         </KeyboardAvoidingView>
       ) : (

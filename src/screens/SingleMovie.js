@@ -12,14 +12,39 @@ import {FlatList} from 'react-native-gesture-handler';
 
 export default function SingleMovie(props) {
   const data = props.route.params.data;
-  console.log(data);
+  const imageUrl = `https://homeflix-media.azureedge.net/images/movies/${data.imageName}`;
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text>{data.title}</Text>
-      <Button
-        press={() => props.navigation.navigate('All Movies')}
-        text="All Movies"
-      />
-    </View>
+    <ScrollView className="flex-1 bg-white px-2 py-5">
+      <View className="flex-row">
+        <View className="w-1/2">
+          <Image
+            className="h-64 landscape:w-[400] w-full rounded-sm"
+            source={{
+              uri: imageUrl,
+            }}
+          />
+        </View>
+        <View className="w-1/2 px-5">
+          <Text className="text-center text-primary text-2xl py-2">
+            {data.title}
+          </Text>
+          <Text className="text-center text-md py-2">
+            Release Year: {data.releaseYear}
+          </Text>
+          <Text className="text-center text-md py-2">
+            Duration : {data.duration}
+          </Text>
+        </View>
+      </View>
+      <View className="my-5 p-2 border border-primary rounded-lg">
+        <Text className="text-lg">{data.description}</Text>
+      </View>
+      <View className="flex-row justify-around py-5">
+        <Button
+          press={() => props.navigation.navigate('Play Movie', {data: data})}
+          text="Play"
+        />
+      </View>
+    </ScrollView>
   );
 }

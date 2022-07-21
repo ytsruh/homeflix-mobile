@@ -19,6 +19,7 @@ import Button from './components/Button';
 import MoviesStack from './MoviesStack';
 import LoginScreen from './screens/LoginScreen';
 import {AuthContext, AuthProvider} from './context/AuthContext';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function ShowsScreen() {
   return (
@@ -29,13 +30,13 @@ function ShowsScreen() {
 }
 
 function AccountScreen() {
-  const {userInfo, logout} = useContext(AuthContext);
-  //const name = userInfo.userData.name;
-  console.log(userInfo);
+  const {logout} = useContext(AuthContext);
+  //let token = await AsyncStorage.getItem('userToken');
+  //let user = await AsyncStorage.getItem('userInfo');
   return (
     <View className="flex-1 items-center justify-center bg-white">
       <Text>Account</Text>
-      <Text>{userInfo.userData.name}</Text>
+      <Text>Name</Text>
       <Button press={logout} text="Logout" />
     </View>
   );
