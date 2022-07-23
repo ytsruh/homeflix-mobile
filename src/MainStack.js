@@ -18,15 +18,8 @@ import {AuthContext, AuthProvider} from './context/AuthContext';
 import Loading from './components/Loading';
 import LoginScreen from './screens/LoginScreen';
 import MoviesStack from './MoviesStack';
+import ShowsStack from './ShowsStack';
 import Account from './screens/Account';
-
-function ShowsScreen() {
-  return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text>TV Shows</Text>
-    </View>
-  );
-}
 
 const Tab = createBottomTabNavigator();
 
@@ -49,7 +42,7 @@ const MainApp = () => {
       />
       <Tab.Screen
         name="Shows"
-        component={ShowsScreen}
+        component={ShowsStack}
         options={{
           tabBarIcon: ({focused, color, size}) => {
             return <TvFill fill={color} />;

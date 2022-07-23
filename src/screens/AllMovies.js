@@ -11,6 +11,8 @@ import {
 import {AuthContext} from '../context/AuthContext';
 import Button from '../components/Button';
 import Loading from '../components/Loading';
+import DataError from '../components/DataError';
+import Header from '../components/Header';
 import img from '../assets/movies.jpeg';
 import {BASE_URL} from '../config';
 import {FlatList} from 'react-native-gesture-handler';
@@ -65,48 +67,24 @@ export default function AllMovies(props) {
               <MovieItem navigation={props.navigation} data={item} />
             )}
             keyExtractor={movie => movie._id}
-            ListHeaderComponent={<Header setFilter={setFilter} />}
+            ListHeaderComponent={
+              <Header
+                setFilter={setFilter}
+                title="Movies"
+                img={img}
+                text="The best action, comedy and all round great movies"
+              />
+            }
             numColumns={2}
             initialNumToRender={10}
           />
         </KeyboardAvoidingView>
       ) : (
-        <NoMovies />
+        <DataError message="Sorry something went wrong, there are no movies here" />
       )}
     </View>
   );
 }
-
-const Header = props => {
-  return (
-    <View>
-      <View>
-        <View className="p-3">
-          <Text className="text-primary text-5xl">Movies</Text>
-          <Text className="text-md text-slate">
-            The best action, comedy and all round great movies
-          </Text>
-        </View>
-        <Image source={img} className="h-48 landscape:h-48 w-full" />
-      </View>
-      <TextInput
-        placeholder={'Filter'}
-        onChangeText={text => props.setFilter(text)}
-        className="w-100 p-3 m-3 border border-black rounded-lg"
-      />
-    </View>
-  );
-};
-
-const NoMovies = () => {
-  return (
-    <View className="flex-1 items-center justify-center px-10 bg-salt">
-      <Text className="text-center text-lg text-primary">
-        Sorry something went wrong, there are no movies here
-      </Text>
-    </View>
-  );
-};
 
 const MovieItem = props => {
   const imageUrl = `https://homeflix-media.azureedge.net/images/movies/${props.data.item.imageName}`;

@@ -1,23 +1,22 @@
 import * as React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Button from './components/Button';
-import AllMovies from './screens/AllMovies';
-import SingleMovie from './screens/SingleMovie';
-import PlayMovie from './screens/PlayMovie';
+import AllShows from './screens/AllShows';
+import SingleShow from './screens/SingleShow';
+import PlayShow from './screens/PlayShow';
 
 const Stack = createNativeStackNavigator();
 
-export default function MoviesStack() {
+export default function ShowsStack() {
   return (
     <Stack.Navigator
-      initialRouteName="All Movies"
+      initialRouteName="All Shows"
       screenOptions={({route}) => ({
         headerShown: false,
       })}>
-      <Stack.Screen name="All Movies" component={AllMovies} />
+      <Stack.Screen name="All Shows" component={AllShows} />
       <Stack.Screen
-        name="Single Movie"
-        component={SingleMovie}
+        name="Single Show"
+        component={SingleShow}
         options={({route}) => ({
           title: route.params.data.title,
           headerBackVisible: true,
@@ -25,8 +24,8 @@ export default function MoviesStack() {
         })}
       />
       <Stack.Screen
-        name="Play Movie"
-        component={PlayMovie}
+        name="Play Show"
+        component={PlayShow}
         options={({route}) => ({
           title: route.params.data.title,
           headerBackVisible: true,

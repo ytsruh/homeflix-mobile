@@ -6,7 +6,8 @@ export default function Button(props) {
     <Pressable
       onPress={props.press}
       className={`${props.bgColor} rounded-lg px-5 py-3`}>
-      <Text className={`${props.textColor} ${props.bgColor} text-lg`}>
+      <Text
+        className={`${props.textColor} ${props.bgColor} text-lg text-center`}>
         {props.text}
       </Text>
     </Pressable>
