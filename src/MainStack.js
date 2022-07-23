@@ -14,30 +14,16 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import GearFill from 'react-native-bootstrap-icons/icons/gear-fill';
 import CameraReelsFill from 'react-native-bootstrap-icons/icons/camera-reels-fill';
 import TvFill from 'react-native-bootstrap-icons/icons/tv-fill';
-import Loading from './components/Loading';
-import Button from './components/Button';
-import MoviesStack from './MoviesStack';
-import LoginScreen from './screens/LoginScreen';
 import {AuthContext, AuthProvider} from './context/AuthContext';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import Loading from './components/Loading';
+import LoginScreen from './screens/LoginScreen';
+import MoviesStack from './MoviesStack';
+import Account from './screens/Account';
 
 function ShowsScreen() {
   return (
     <View className="flex-1 items-center justify-center bg-white">
       <Text>TV Shows</Text>
-    </View>
-  );
-}
-
-function AccountScreen() {
-  const {logout} = useContext(AuthContext);
-  //let token = await AsyncStorage.getItem('userToken');
-  //let user = await AsyncStorage.getItem('userInfo');
-  return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text>Account</Text>
-      <Text>Name</Text>
-      <Button press={logout} text="Logout" />
     </View>
   );
 }
@@ -72,7 +58,7 @@ const MainApp = () => {
       />
       <Tab.Screen
         name="Account"
-        component={AccountScreen}
+        component={Account}
         options={{
           tabBarIcon: ({focused, color, size}) => {
             return <GearFill fill={color} />;
