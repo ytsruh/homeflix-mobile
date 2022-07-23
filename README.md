@@ -4,7 +4,10 @@ The mobile app for Homeflix built using React Native
 
 ## Versions
 
-TBC
+### 0.1
+
+- Build using Create React Native App
+- Added Tailwind
 
 ## Libraries Used
 
