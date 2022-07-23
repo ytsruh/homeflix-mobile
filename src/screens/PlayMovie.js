@@ -19,7 +19,7 @@ export default function PlayMovie(props) {
     setLoading(false);
   };
   return (
-    <View className="flex-1 items-center justify-center bg-white">
+    <View className="flex-1 items-center justify-center bg-salt">
       {loading ? <Loading /> : ''}
       {error ? (
         <Error />

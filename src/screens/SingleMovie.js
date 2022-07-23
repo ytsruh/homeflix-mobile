@@ -14,7 +14,7 @@ export default function SingleMovie(props) {
   const data = props.route.params.data;
   const imageUrl = `https://homeflix-media.azureedge.net/images/movies/${data.imageName}`;
   return (
-    <ScrollView className="flex-1 bg-white px-2 py-5">
+    <ScrollView className="flex-1 bg-salt px-2 py-5">
       <View className="flex-row">
         <View className="w-1/2">
           <Image
@@ -28,16 +28,16 @@ export default function SingleMovie(props) {
           <Text className="text-center text-primary text-2xl py-2">
             {data.title}
           </Text>
-          <Text className="text-center text-md py-2">
+          <Text className="text-center text-md text-slate py-2">
             Release Year: {data.releaseYear}
           </Text>
-          <Text className="text-center text-md py-2">
+          <Text className="text-center text-md text-slate py-2">
             Duration : {data.duration}
           </Text>
         </View>
       </View>
-      <View className="my-5 p-2 border border-primary rounded-lg">
-        <Text className="text-lg">{data.description}</Text>
+      <View className="my-5 p-2 border border-slate rounded-lg">
+        <Text className="text-lg text-slate">{data.description}</Text>
       </View>
       <View className="flex-row justify-around py-5">
         <Button

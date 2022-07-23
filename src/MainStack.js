@@ -34,8 +34,8 @@ const MainApp = () => {
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
-        tabBarActiveTintColor: 'red',
-        tabBarInactiveTintColor: 'grey',
+        tabBarActiveTintColor: '#D6220E',
+        tabBarInactiveTintColor: '#3f3f46',
         headerShown: false,
       })}>
       <Tab.Screen

@@ -5,8 +5,15 @@ export default function Button(props) {
   return (
     <Pressable
       onPress={props.press}
-      className="bg-red-500 rounded-lg px-5 py-3">
-      <Text className="text-white text-lg">{props.text}</Text>
+      className={`${props.bgColor} rounded-lg px-5 py-3`}>
+      <Text className={`${props.textColor} ${props.bgColor} text-lg`}>
+        {props.text}
+      </Text>
     </Pressable>
   );
 }
+
+Button.defaultProps = {
+  bgColor: 'bg-primary',
+  textColor: 'text-salt',
+};

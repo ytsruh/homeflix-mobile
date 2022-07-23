@@ -20,9 +20,9 @@ export default function LoginScreen() {
 
   return (
     <KeyboardAvoidingView behavior={'position'} style={{flex: 1}}>
-      <ScrollView className="flex-1 py-8 px-3 bg-white landscape:flex-none landscape:my-2">
+      <ScrollView className="flex-1 py-8 px-3 bg-salt landscape:flex-none landscape:my-2">
         <View className="flex-1 items-center">
-          <Text className="text-4xl text-center text-red-600 my-3">
+          <Text className="text-4xl text-center text-primary my-3">
             Welcome to Homeflix
           </Text>
           <Image

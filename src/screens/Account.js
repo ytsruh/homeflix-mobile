@@ -33,20 +33,22 @@ export default function Account() {
   }
 
   return (
-    <ScrollView className="h-full pt-8 bg-white landscape:flex-none landscape:my-2">
+    <ScrollView className="h-full pt-8 bg-salt landscape:flex-none landscape:my-2">
       <View>
         <View className="p-3">
           <Text className="text-primary text-5xl">Account</Text>
-          <Text className="text-md">Your account & profile</Text>
+          <Text className="text-md text-slate">Your account & profile</Text>
         </View>
         <Image source={img} className="h-48 landscape:h-48 w-full" />
       </View>
       <View className="m-5">
         <Text className="text-primary text-xl py-2">
-          Name : <Text className="text-lg">{user ? user.name : ''}</Text>
+          Name :{' '}
+          <Text className="text-lg text-slate">{user ? user.name : ''}</Text>
         </Text>
         <Text className="text-primary text-xl py-2">
-          App Version : <Text className="text-lg">{APP_VERSION}</Text>
+          App Version :{' '}
+          <Text className="text-lg text-slate">{APP_VERSION}</Text>
         </Text>
         <View className="flex-1 items-center py-5">
           <Button press={logout} text="Logout" />

@@ -56,7 +56,7 @@ export default function AllMovies(props) {
     return <Loading />;
   }
   return (
-    <View className="h-full pt-8 bg-white landscape:flex-none landscape:my-2">
+    <View className="h-full pt-8 bg-salt landscape:flex-none landscape:my-2">
       {data.length > 0 ? (
         <KeyboardAvoidingView behavior={'position'} style={{flex: 1}}>
           <FlatList
@@ -83,7 +83,7 @@ const Header = props => {
       <View>
         <View className="p-3">
           <Text className="text-primary text-5xl">Movies</Text>
-          <Text className="text-md">
+          <Text className="text-md text-slate">
             The best action, comedy and all round great movies
           </Text>
         </View>
@@ -100,8 +100,8 @@ const Header = props => {
 
 const NoMovies = () => {
   return (
-    <View className="flex-1 items-center justify-center px-10">
-      <Text className="text-center text-lg">
+    <View className="flex-1 items-center justify-center px-10 bg-salt">
+      <Text className="text-center text-lg text-primary">
         Sorry something went wrong, there are no movies here
       </Text>
     </View>
@@ -113,7 +113,7 @@ const MovieItem = props => {
   return (
     <View
       style={{
-        flex: 1,
+        flex: 0.5, //Flex is equal to 1 divided by number of columns in FlatList
         flexDirection: 'column',
         margin: 2,
       }}>
@@ -122,7 +122,7 @@ const MovieItem = props => {
           props.navigation.navigate('Single Movie', {data: props.data.item})
         }>
         <Image
-          className="h-72 landscape:w-[400] w-full"
+          className="h-72 landscape:w-[400]"
           source={{
             uri: imageUrl,
           }}
