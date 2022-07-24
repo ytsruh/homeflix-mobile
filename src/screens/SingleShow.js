@@ -14,7 +14,6 @@ import {FlatList} from 'react-native-gesture-handler';
 
 export default function SingleShow(props) {
   const data = props.route.params.data;
-  console.log(data);
   const imageUrl = `https://homeflix-media.azureedge.net/images/shows/${data.imageName}`;
   const {userToken} = useContext(AuthContext);
   const [isLoading, setIsLoading] = useState(true);

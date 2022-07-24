@@ -32,15 +32,17 @@ export default function LoginScreen() {
         </View>
         <TextInput
           placeholder={'Email'}
+          placeholderTextColor="#36393B"
           autoCapitalize="none"
           onChangeText={text => setEmail(text)}
-          className="my-3 p-3 border border-black rounded-lg"
+          className="my-3 p-3 border border-coal rounded-lg"
         />
         <TextInput
-          placeholder={'Password'}
+          placeholder="Password"
+          placeholderTextColor="#36393B"
           secureTextEntry={true}
           onChangeText={text => setPassword(text)}
-          className="my-3 p-3 border border-black rounded-lg"
+          className="my-3 p-3 border border-coal rounded-lg"
         />
         <View className="flex-1 items-center py-3">
           <Button text="Login" press={() => login(email, password)} />

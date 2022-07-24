@@ -29,7 +29,10 @@ const MainApp = () => {
       screenOptions={({route}) => ({
         tabBarActiveTintColor: '#D6220E',
         tabBarInactiveTintColor: '#3f3f46',
+        tabBarActiveBackgroundColor: '#f9fafb',
+        tabBarInactiveBackgroundColor: '#f9fafb',
         headerShown: false,
+        tabBarStyle: {marginBottom: 5},
       })}>
       <Tab.Screen
         name="Movies"
@@ -70,7 +73,7 @@ const MainStack = () => {
   }
 
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView className="flex-1 bg-salt">
       <NavigationContainer>
         {userToken ? <MainApp /> : <LoginScreen />}
       </NavigationContainer>
