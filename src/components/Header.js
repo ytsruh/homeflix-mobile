@@ -15,8 +15,9 @@ const Header = props => {
       {props.setFilter ? (
         <TextInput
           placeholder={'Filter'}
+          placeholderTextColor="#36393B"
           onChangeText={text => props.setFilter(text)}
-          className="w-100 p-3 m-3 border border-black rounded-lg"
+          className="w-100 p-3 m-3 border border-coal rounded-lg"
         />
       ) : (
         <View className="my-3 mx-5 border border-primary" />

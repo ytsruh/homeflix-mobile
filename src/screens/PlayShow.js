@@ -11,7 +11,6 @@ export default function PlayShow(props) {
   )}/${encodeURIComponent(`Season ${data.seasonNumber}`)}/${encodeURIComponent(
     data.fileName,
   )}`;
-  console.log(url);
   const videoError = e => {
     console.log(e);
     setLoading(false);

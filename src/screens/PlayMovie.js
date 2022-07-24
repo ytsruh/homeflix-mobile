@@ -9,7 +9,6 @@ export default function PlayMovie(props) {
   const url = `https://homeflix-media.azureedge.net/movies/${encodeURIComponent(
     data.fileName,
   )}`;
-  console.log(url);
   const videoError = e => {
     console.log(e);
     setLoading(false);
